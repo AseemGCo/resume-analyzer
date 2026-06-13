@@ -1,0 +1,13 @@
+{
+  "name": "resume-analyzer",
+  "version": "1.0.0",
+  "description": "End-to-end Resume Analyzer (React + Vite frontend, Express + OpenRouter backend), deployable as a single Railway service.",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "npm install --prefix server && npm install --prefix client && npm run build --prefix client",
+    "start": "npm start --prefix server"
+  }
+}

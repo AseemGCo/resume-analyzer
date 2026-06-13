@@ -1,0 +1,19 @@
+{
+  "name": "resume-analyzer-server",
+  "version": "1.0.0",
+  "description": "Express backend for the Resume Analyzer (PDF/DOCX extraction + OpenRouter analysis)",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mammoth": "^1.8.0",
+    "multer": "^2.0.1",
+    "pdf-parse": "^1.1.1"
+  }
+}
