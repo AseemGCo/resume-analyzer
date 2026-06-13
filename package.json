@@ -1,13 +1,22 @@
 {
   "name": "resume-analyzer",
   "version": "1.0.0",
-  "description": "End-to-end Resume Analyzer (React + Vite frontend, Express + OpenRouter backend), deployable as a single Railway service.",
+  "description": "End-to-end Resume Analyzer (React + Vite frontend, Express + OpenRouter backend). Deployable as one Vercel project (static client + /api serverless function) or one Railway service.",
   "private": true,
+  "type": "module",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
     "build": "npm install --prefix server && npm install --prefix client && npm run build --prefix client",
     "start": "npm start --prefix server"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mammoth": "^1.8.0",
+    "multer": "^2.0.1",
+    "pdf-parse": "^1.1.1"
   }
 }
