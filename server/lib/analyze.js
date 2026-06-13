@@ -121,7 +121,10 @@ export async function analyzeResume({ resumeText, jobDescription }) {
     // for models/providers that don't strictly honor json_object.
     response_format: { type: 'json_object' },
     temperature: 0.2,
-    max_tokens: 2000,
+    // Output cap. Lower it (env var) if a low-credit OpenRouter account returns
+    // 402 "requires more credits, or fewer max_tokens". Too low risks truncating
+    // the JSON; ~1500 fits most analyses.
+    max_tokens: Number(process.env.OPENROUTER_MAX_TOKENS) || 1500,
   };
 
   const res = await fetch(OPENROUTER_URL, {
